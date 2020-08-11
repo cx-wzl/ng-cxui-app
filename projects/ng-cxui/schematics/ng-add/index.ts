@@ -21,7 +21,7 @@ export function ngAdd(_options: any): Rule {
       input: 'node_modules/ng-cxui/assets/',
       output: 'assets/',
     });
-    tree.overwrite('angular.json', JSON.stringify(workspaceConfig));
+    tree.overwrite('angular.json', JSON.stringify(workspaceConfig, null, 2));
     return tree;
   };
 }

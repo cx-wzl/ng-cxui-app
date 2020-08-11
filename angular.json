@@ -123,6 +123,46 @@
           }
         }
       }
+    },
+    "ng-cxui": {
+      "projectType": "library",
+      "root": "projects/ng-cxui",
+      "sourceRoot": "projects/ng-cxui/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ng-cxui/tsconfig.lib.json",
+            "project": "projects/ng-cxui/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ng-cxui/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-cxui/src/test.ts",
+            "tsConfig": "projects/ng-cxui/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-cxui/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-cxui/tsconfig.lib.json",
+              "projects/ng-cxui/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "ng-cxui-app"
 }

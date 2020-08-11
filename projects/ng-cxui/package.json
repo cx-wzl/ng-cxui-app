@@ -1,6 +1,12 @@
 {
   "name": "ng-cxui",
   "version": "0.0.1",
+  "schematics": "./schematics/collection.json",
+  "scripts": {
+    "build": "npx ../../node_modules/.bin/tsc -p tsconfig.schematics.json",
+    "copy:collection": "copy schematics\\collection.json ..\\..\\dist\\ng-cxui\\schematics\\",
+    "postbuild": "npm run copy:collection"
+  },
   "peerDependencies": {
     "@angular/common": "^10.0.6",
     "@angular/core": "^10.0.6"
